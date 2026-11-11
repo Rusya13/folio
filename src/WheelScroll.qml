@@ -7,6 +7,9 @@ import QtQuick
 WheelHandler {
     id: wheel
     target: null
+    // Mouse only by default, but on Wayland the compositor's pointer (wheel
+    // included) often arrives as a touchpad, and touchpads should scroll too.
+    acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
 
     // Given by name: inside a Flickable this handler lands on its content
     // item, not on the Flickable itself.
