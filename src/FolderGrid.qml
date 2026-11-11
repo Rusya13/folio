@@ -43,9 +43,10 @@ GridView {
     clip: true
     focus: true
     keyNavigationEnabled: true
-    // Pressing and dragging picks up a file (to pin it, or drop it in another
-    // app) rather than flicking; WheelScroll keeps the wheel and touchpad.
-    interactive: false
+    // Pressing and dragging with the mouse picks up a file (to pin it, or
+    // drop it in another app) rather than flicking; the wheel, touchpad and
+    // touchscreen still scroll.
+    acceptedButtons: Qt.NoButton
     boundsBehavior: Flickable.StopAtBounds
     model: backend.folder
     readonly property int columns: Math.max(1, Math.floor(width / 168))
@@ -53,7 +54,6 @@ GridView {
     cellHeight: 192
     highlightFollowsCurrentItem: false
     ScrollBar.vertical: FolioScrollBar { }
-    WheelScroll { view: grid }
 
     delegate: FileTile {
         width: grid.cellWidth

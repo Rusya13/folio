@@ -28,12 +28,13 @@ ColumnLayout {
         clip: true
         focus: true
         keyNavigationEnabled: true
-        interactive: false
+        // Dragging with the mouse picks up a file, not the view; the wheel,
+        // touchpad and touchscreen still scroll it.
+        acceptedButtons: Qt.NoButton
         boundsBehavior: Flickable.StopAtBounds
         highlightFollowsCurrentItem: false
         model: backend.folder
         ScrollBar.vertical: FolioScrollBar { }
-        WheelScroll { view: list }
 
         onCurrentIndexChanged: selecting.cursorMoved()
         Keys.onPressed: (event) => {

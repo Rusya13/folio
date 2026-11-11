@@ -59,14 +59,13 @@ Item {
         id: flick
         anchors.fill: parent
         clip: true
-        interactive: false
+        acceptedButtons: Qt.NoButton
         contentWidth: row.width
         contentHeight: height
         boundsBehavior: Flickable.StopAtBounds
         onContentWidthChanged: view.revealEnd()
         onWidthChanged: view.revealEnd()
         ScrollBar.horizontal: FolioScrollBar { }
-        WheelScroll { view: flick; orientation: Qt.Horizontal }
 
         Row {
             id: row
@@ -86,10 +85,9 @@ Item {
                         width: view.columnWidth
                         height: parent.height
                         clip: true
-                        interactive: false
+                        acceptedButtons: Qt.NoButton
                         boundsBehavior: Flickable.StopAtBounds
                         ScrollBar.vertical: FolioScrollBar { }
-                        WheelScroll { view: column }
                         model: FolderModel {
                             id: folder
                             path: ancestor.path
@@ -129,12 +127,11 @@ Item {
                 clip: true
                 focus: true
                 keyNavigationEnabled: true
-                interactive: false
+                acceptedButtons: Qt.NoButton
                 boundsBehavior: Flickable.StopAtBounds
                 highlightFollowsCurrentItem: false
                 model: backend.folder
                 ScrollBar.vertical: FolioScrollBar { }
-                WheelScroll { view: here }
 
                 TapHandler {
                     acceptedButtons: Qt.RightButton
@@ -184,10 +181,9 @@ Item {
                 height: row.height
                 visible: view.selected.isDir === true
                 clip: true
-                interactive: false
+                acceptedButtons: Qt.NoButton
                 boundsBehavior: Flickable.StopAtBounds
                 ScrollBar.vertical: FolioScrollBar { }
-                WheelScroll { view: inside }
                 TapHandler {
                     acceptedButtons: Qt.RightButton
                     onTapped: (point) => {
