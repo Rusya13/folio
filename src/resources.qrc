@@ -19,6 +19,7 @@
         <file alias="FolioMenuItem.qml">FolioMenuItem.qml</file>
         <file alias="MenuLine.qml">MenuLine.qml</file>
         <file alias="FolioScrollBar.qml">FolioScrollBar.qml</file>
+        <file alias="WheelScroll.qml">WheelScroll.qml</file>
         <file alias="PlainButton.qml">PlainButton.qml</file>
         <file alias="PlainField.qml">PlainField.qml</file>
         <file alias="SortMenu.qml">SortMenu.qml</file>

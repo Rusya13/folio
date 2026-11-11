@@ -33,6 +33,7 @@ ColumnLayout {
         highlightFollowsCurrentItem: false
         model: backend.folder
         ScrollBar.vertical: FolioScrollBar { }
+        WheelScroll { view: list }
 
         onCurrentIndexChanged: selecting.cursorMoved()
         Keys.onPressed: (event) => {

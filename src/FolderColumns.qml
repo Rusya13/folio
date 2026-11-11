@@ -66,6 +66,7 @@ Item {
         onContentWidthChanged: view.revealEnd()
         onWidthChanged: view.revealEnd()
         ScrollBar.horizontal: FolioScrollBar { }
+        WheelScroll { view: flick; orientation: Qt.Horizontal }
 
         Row {
             id: row
@@ -88,6 +89,7 @@ Item {
                         interactive: false
                         boundsBehavior: Flickable.StopAtBounds
                         ScrollBar.vertical: FolioScrollBar { }
+                        WheelScroll { view: column }
                         model: FolderModel {
                             id: folder
                             path: ancestor.path
@@ -132,6 +134,7 @@ Item {
                 highlightFollowsCurrentItem: false
                 model: backend.folder
                 ScrollBar.vertical: FolioScrollBar { }
+                WheelScroll { view: here }
 
                 TapHandler {
                     acceptedButtons: Qt.RightButton
@@ -184,6 +187,7 @@ Item {
                 interactive: false
                 boundsBehavior: Flickable.StopAtBounds
                 ScrollBar.vertical: FolioScrollBar { }
+                WheelScroll { view: inside }
                 TapHandler {
                     acceptedButtons: Qt.RightButton
                     onTapped: (point) => {

@@ -44,7 +44,7 @@ GridView {
     focus: true
     keyNavigationEnabled: true
     // Pressing and dragging picks up a file (to pin it, or drop it in another
-    // app) rather than flicking; the wheel and touchpad still scroll.
+    // app) rather than flicking; WheelScroll keeps the wheel and touchpad.
     interactive: false
     boundsBehavior: Flickable.StopAtBounds
     model: backend.folder
@@ -53,6 +53,7 @@ GridView {
     cellHeight: 192
     highlightFollowsCurrentItem: false
     ScrollBar.vertical: FolioScrollBar { }
+    WheelScroll { view: grid }
 
     delegate: FileTile {
         width: grid.cellWidth
